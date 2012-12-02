@@ -21,18 +21,72 @@
       </style>
    </head>
    <body>
-      <h1>About</h1>
-      <p>This is an open-source project for GCM service for public use by Vilius Kraujutis.</p>
+      <h1>GCM4Public - GCM for Public</h1>
+      <p>This is an open-source project providing service to collect GCM client registrations and sending to all of them a GCM message when needed.</p>
+      <b>Please fill this form with your details to send message to your users</b>
+      <p>It is prefilled with sample data. Devices which has <a href="https://play.google.com/store/apps/details?id=lt.andro.gcm4public">GCM4Public-Client</a> installed will receive this message if you won't provide different senderId and API key. Please don't be spammy and provide your correct data.</p>
       <div class="container">
          <form method="get" action="sendgcm2clients">
             <b>ApiKey: </b>&nbsp<input name="apiKey" type="text" value="AIzaSyAnYFesv6KOGODnwjLJbLWcCa6uAecUF4A" /><br />
             <b>SenderId: </b>&nbsp<input name="senderId" type="text" value="716163315987" /><br />
             <br />
             <b>Title: </b>&nbsp<input name="title" type="text" value="GCM4Public" /><br />
-            <b>Message: </b>&nbsp<input name="message" type="text" value="This is an open source project. Please contribute to it." /><br />
-            <b>Url: </b>&nbsp<input name="url" type="text" value="http://www.andro.lt" /><br />
+            <b>Message: </b>&nbsp<input name="message" type="text" value="Someone is testing GCM4Public application. :)" /><br />
+            <b>Url: </b>&nbsp<input name="url" type="text" value="https://gcm4public.appspot.com" /><br />
             <input value="Send GCM to everyone subscribed Android device" type="submit" />
          </form>
       </div>
+      
+      
+      <h2>
+GCM4Public open-source GCM service</h2>
+<h3>
+The event</h3>
+During the +GDG Vilnius event&nbsp;<a href="https://plus.google.com/events/cmhbdo30rq42cf34k02qj6k1rhs" target="_blank"> Hackathon: Google Cloud Messaging for Android</a>, this open source project was created:<br />
+<a href="https://github.com/gdgvilnius/GCM4Public-GAE-Server">https://github.com/gdgvilnius/GCM4Public-GAE-Server</a><br />
+<h3>
+The server</h3>
+The Demo Android application using this GCM4Public service is open here:<br />
+<a href="https://github.com/gdgvilnius/GCM4Public-Android-Client">https://github.com/gdgvilnius/GCM4Public-Android-Client</a><br />
+<br />
+This is the Java class which sends GCM message:<br />
+<a href="https://github.com/gdgvilnius/GCM4Public-GAE-Server/blob/master/src/lt/andro/gcm4public/SendGCM2Clients.java">https://github.com/gdgvilnius/GCM4Public-GAE-Server/blob/master/src/lt/andro/gcm4public/SendGCM2Clients.java</a><br />
+<h3>
+The client</h3>
+To use Google Cloud Messaging for Android you need to register at Google's API console:<br />
+<a href="https://code.google.com/apis/console">https://code.google.com/apis/console</a><br />
+<br />
+This is the Java class responsible for handling GCM messages and registers on GCM4Public server:<br />
+<a href="https://github.com/gdgvilnius/GCM4Public-Android-Client/blob/master/src/lt/andro/gcm4public/GCMIntentService.java">https://github.com/gdgvilnius/GCM4Public-Android-Client/blob/master/src/lt/andro/gcm4public/GCMIntentService.java</a><br />
+<br />
+Here you can see how device initiates registration on the GCM:<br />
+<a href="https://github.com/gdgvilnius/GCM4Public-Android-Client/blob/master/src/lt/andro/gcm4public/MainActivity.java">https://github.com/gdgvilnius/GCM4Public-Android-Client/blob/master/src/lt/andro/gcm4public/MainActivity.java</a><br />
+<h3>
+Sending messages</h3>
+You'll get the project number (aka senderId) and API Key. These two are used in this service to send GCM notifications. And you need to provide it in this form:&nbsp;<a href="https://gcm4public.appspot.com/" target="_blank">https://gcm4public.appspot.com/</a><br />
+<br />
+The service is secure, because only senderId and phones registrationId are stored. The API key is not saved on server and you need to provide it every time you want to send a message to the server.<br />
+The senderId is used to filter app's users, so one application would not disturb other's users.<br />
+<br />
+Multiple applications can use this single server:&nbsp;<a href="https://gcm4public.appspot.com/" target="_blank">https://gcm4public.appspot.com/</a><br />
+<h3>
+Google App Engine</h3>
+It's running on Google App Engine so it has some limitations, but I think, it might be running ok for few hundred small apps. If you have tens of thousands users, please fork the project on github and put on your separate Google App Engine account with separate daily limits.<br />
+<br />
+<h3>
+Other resources</h3>
+Blog post:&nbsp;<a href="http://www.andro.lt/2012/11/google-cloud-messaging-for-android.html">http://www.andro.lt/2012/11/google-cloud-messaging-for-android.html</a><br />
+<br />
+<br />
+Google Cloud Messaging for Android by&nbsp;<span style="background-color: white; color: #464646; font-family: 'Open Sans', Arial, sans-serif; font-size: 13px; font-weight: bold;">Francesco Nerieri:</span><br />
+<a href="https://developers.google.com/events/io/sessions/gooio2012/100/">https://developers.google.com/events/io/sessions/gooio2012/100/</a><br />
+<br />
+and get the slides here:<br />
+<a href="http://commondatastorage.googleapis.com/io2012/presentations/live%20to%20website/100.pdf">http://commondatastorage.googleapis.com/io2012/presentations/live%20to%20website/100.pdf</a><br />
+<br />
+If you want to read more, here is the link on&nbsp;<a href="http://developer.android.com/">developer.android.com</a>&nbsp;about GCM for Android:<br />
+<a href="http://developer.android.com/guide/google/gcm/gs.html">http://developer.android.com/guide/google/gcm/gs.html</a><br />
+<br />
+<br />
    </body>
 </html>

@@ -51,7 +51,7 @@ public class SendGCM2Clients extends HttpServlet {
 			resp.getWriter().println("message:" + message);
 			resp.getWriter().println("url: " + url);
 			resp.getWriter().println(
-					"Message sent to these devices: " + devices);
+					"Message sent to this number of devices:" + devices.size());
 			resp.getWriter().println("This API key was used: " + apiKey);
 			resp.getWriter().println("The result is: " + result);
 		} else {

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+<html>
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+      <title>GCM4Public - GCM for Public</title>
+      <style type="text/css">
+         .container {
+         width: 100%;
+         clear: both;
+         }
+         .container input {
+         width: 100%;
+         clear: both;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>About</h1>
+      <p>This is an open-source project for GCM service for public use by Vilius Kraujutis.</p>
+      <div class="container">
+         <form method="get" action="sendgcm2clients">
+            <b>ApiKey: </b>&nbsp<input name="apiKey" type="text" value="AIzaSyAnYFesv6KOGODnwjLJbLWcCa6uAecUF4A" /><br />
+            <b>SenderId: </b>&nbsp<input name="senderId" type="text" value="716163315987" /><br />
+            <br />
+            <b>Title: </b>&nbsp<input name="title" type="text" value="GCM4Public" /><br />
+            <b>Message: </b>&nbsp<input name="message" type="text" value="This is an open source project. Please contribute to it." /><br />
+            <b>Url: </b>&nbsp<input name="url" type="text" value="http://www.andro.lt" /><br />
+            <input value="Send GCM to everyone subscribed Android device" type="submit" />
+         </form>
+      </div>
+   </body>
+</html>
